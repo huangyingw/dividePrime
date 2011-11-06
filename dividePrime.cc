@@ -4,34 +4,23 @@
 
 using namespace std;
 
-int palindrome_num(int num)
+void dividePrime(int num)
 {
-  int new_num=0;
-  int temp=num;
-  while ( temp )
-  {
-    new_num=new_num*10+temp%10;
-    temp/=10;
-  }
-  return new_num == num;
-}
-
-int palindrome_str(char str[], int len)
-{
-  if (1==len)
-    return 1;
-  else if (str[len-1]!=str[0])
-    return 0;
-  else
-    return  palindrome_str(str+1,len-2);
+  int result=0;
+  if ( 1 == num)
+    return ;
+  int fac=2;
+  while ( 0!=num%fac )
+    fac++;
+  cout<<fac<<"*";
+  dividePrime(num/fac);
+  cout<<endl;
 }
 
 int main() 
 {
-  cout<<palindrome_num(12321)<<endl;
-  cout<<palindrome_num(22321)<<endl;
-  cout<<palindrome_num(123454321)<<endl;
-  cout<<palindrome_str("1234321",7)<<endl;
-  cout<<palindrome_str("1334321",7)<<endl;
+  dividePrime(12321);
+  dividePrime(12325);
+  dividePrime(12320);
   return 0;
 }
