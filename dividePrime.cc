@@ -14,7 +14,6 @@ void dividePrime(int num)
     fac++;
   cout<<fac<<"*";
   dividePrime(num/fac);
-  cout<<endl;
 }
 
 int main() 
