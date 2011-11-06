@@ -1,2 +1,2 @@
 make -B \
-&& ./palindrome.exe
+&& ./dividePrime.exe
