@@ -6,10 +6,12 @@ using namespace std;
 
 void dividePrime(int num)
 {
-  int result=0;
-  if ( 1 == num)
-    return ;
   int fac=2;
+  if ( 1 == num)
+  {
+    cout<<endl;
+    return ;
+  }
   while ( 0!=num%fac )
     fac++;
   cout<<fac<<"*";
