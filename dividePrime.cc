@@ -1,6 +1,3 @@
-// dividePrime.cpp : Defines the entry point for the console application.
-//
-
 #include"stdio.h"
 #include"stdlib.h"
 #include<iostream>
@@ -10,14 +7,14 @@ using namespace std;
 void dividePrime(int num, int result[])
 {
   int fac=2;
-  if ( 1 == num)
+  while ( num > 1)
   {
-    return ;
+    fac=2;
+    while ( 0!=num%fac )
+      fac++;
+    *result++=fac;
+    num/=fac;
   }
-  while ( 0!=num%fac )
-    fac++;
-  result[0]=fac;
-  dividePrime(num/fac,++result);
 }
 
 int main()
@@ -46,6 +43,11 @@ int main()
     cout<<result[i]<<"*";
   }
   cout<<endl;
+  /*
+     12321=3*3*37*37*
+     12325=5*5*17*29*
+     12320=2*2*2*2*2*5*7*11*
+     */
   return 0;
 }
 
