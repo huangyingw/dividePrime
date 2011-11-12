@@ -12,7 +12,6 @@ void dividePrime(int num, int result[])
   int fac=2;
   if ( 1 == num)
   {
-    cout<<endl;
     return ;
   }
   while ( 0!=num%fac )
