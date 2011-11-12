@@ -13,7 +13,7 @@ int* dividePrime(int num)
   while ( num > 1)
   {
     fac=2;
-    while ( 0!=num%fac )
+    while ( num%fac )
       fac++;
     *nav++=fac;
     num/=fac;
