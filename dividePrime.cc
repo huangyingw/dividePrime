@@ -3,24 +3,29 @@
 #include<iostream>
 
 using namespace std;
+#define MAX 1000
 
-void dividePrime(int num, int result[])
+int* dividePrime(int num)
 {
+  int *result=new int[MAX];
+  int *nav=result;
   int fac=2;
   while ( num > 1)
   {
     fac=2;
     while ( 0!=num%fac )
       fac++;
-    *result++=fac;
+    *nav++=fac;
     num/=fac;
   }
+  *nav=0;
+  return result;
 }
 
 int main()
 {
-  int result[1000]={0};
-  dividePrime(12321,result);
+  int *result=NULL;
+  result=dividePrime(12321);
   cout<<"12321"<<"=";
   for (int i=0;result[i]!=0;i++)
   {
@@ -28,7 +33,7 @@ int main()
   }
   cout<<endl;
 
-  dividePrime(12325,result);
+  result=dividePrime(12325);
   cout<<"12325"<<"=";
   for (int i=0;result[i]!=0;i++)
   {
@@ -36,7 +41,7 @@ int main()
   }
   cout<<endl;
 
-  dividePrime(12320,result);
+  result=dividePrime(12320);
   cout<<"12320"<<"=";
   for (int i=0;result[i]!=0;i++)
   {
